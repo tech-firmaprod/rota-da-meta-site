@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="img/logo.webp">
+<title>Rota da Meta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap">
+<link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hud">
+    <div class="brand"><img src="img/logo.webp" alt="Firma Prod."><span class="sep"></span><img class="rota" src="img/rota.webp" alt="Rota da Meta"></div>
+    <div class="boss" aria-label="Meta do time">
+      <div class="boss-top">
+        <div class="boss-name">Meta do time · <b>R$ 3.000.000</b></div>
+        <div class="boss-hp num" id="b-hp">Faltam R$ 3.000.000</div>
+      </div>
+      <div class="hp" id="b-bar" role="img" aria-label="Progresso da meta do time">
+        <div class="life" id="b-life" style="width:0"></div>
+        <div class="hit" id="b-hit" style="left:0;width:0"></div>
+        <div class="pace" id="b-pace" style="left:0"></div>
+      </div>
+      <div class="boss-sub num">
+        <span>Fechado <b id="b-dmg">R$ 0</b> (<b id="b-pct">0%</b>)</span>
+        <span>Em negociação <b id="b-neg">R$ 0</b></span>
+        <span>Dia <b id="b-day">—</b> de 92</span>
+      </div>
+    </div>
+    <div class="live" id="live"><span class="dot"></span><span id="live-t">Conectando…</span></div>
+  </header>
+
+  <main class="main">
+  <section class="stage" style="--bgimg:url(img/estudio.webp)" aria-label="Ranking do time">
+    <div class="stage-head">
+      <div class="stage-title">Ranking · % da meta individual</div>
+      <div class="k">Linha branca = onde deveria estar hoje</div>
+    </div>
+    <div class="err" id="err"></div>
+    <div class="roster" id="roster"></div>
+  </section>
+
+  <div class="side">
+    <section class="card" aria-label="Evolução">
+      <h2>Evolução no trimestre</h2>
+      <div class="chartbox"><canvas id="chart" aria-label="Evolução do percentual da meta de cada pessoa"></canvas></div>
+    </section>
+    <section class="card" aria-label="Últimas vendas">
+      <h2>Últimas vendas</h2>
+      <ul class="feed" id="feed"><li class="empty" style="display:block;border:0">Carregando…</li></ul>
+    </section>
+  </div>
+  </main>
+
+  <p class="foot">Fechado: Venda Ganha com Data da Venda a partir de 01/10 (sem data, vale a criação do card). Em negociação: cards criados desde 01/06 ainda em aberto. Contatos: toda linha do Registro rápido na semana, zerando toda segunda. Atualiza a cada 30 segundos.</p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><img id="toast-img" alt=""><div><div class="a">Nova venda!</div><div class="b num" id="toast-t"></div></div></div>
+
+<script src="app.js?v=5"></script>
+<script src="chegou.js?v=2"></script>
+<script src="auto.js?v=3"></script>
+
+</body>
+</html>
